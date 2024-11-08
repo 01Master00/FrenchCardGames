@@ -1,8 +1,7 @@
 ﻿static void Main()
-{
-
-    Declaration();
-
+{   
+    List<string> deck = Declaration();
+    Shuffle1(deck);
 }
 
 static List<string> Declaration()
@@ -38,7 +37,6 @@ static List<string> Declaration()
         foreach (var item in tipe)
         {
             deck.Add(womp + " " + item);
-            Console.WriteLine(womp + " " + item);
         }
 
         
@@ -46,6 +44,30 @@ static List<string> Declaration()
     return deck;
 }
 
+
+static List<string> Shuffle1(List<string> deck)
+{
+    Random random = new Random();
+    List<string> help = new List<string>();
+    int r;
+    for (int i = 0; i < 5; i++)
+    {
+        while (deck.Count > 0)
+        {
+            r = random.Next(0, deck.Count);
+            help.Add(deck[r]);
+            deck.RemoveAt(r);
+
+        }
+        while (help.Count > 0)
+        {
+            r = random.Next(0, help.Count);
+            deck.Add(help[r]);
+            help.RemoveAt(r);
+        }
+    }
+    return deck;
+}
 
 
 Main();

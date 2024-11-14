@@ -1,4 +1,5 @@
-﻿static void Main()
+﻿
+static void Main()
 {
     bool end = false;
     int menu, money = 1000;
@@ -344,6 +345,10 @@ static int Blackjack(int money)
         }
             
 
+                """);
+            }
+            while (!deal);
+        } while (game);
 
         Console.WriteLine("another round?\n1. YES\n 2. NO\n->");
         another = Convert.ToInt32(Console.ReadLine());
